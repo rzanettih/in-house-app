@@ -19,6 +19,6 @@ export class MenuComponent implements OnInit {
     } else {
         objMenu.classList.remove('open');
     }
-}
+} 
 
 }

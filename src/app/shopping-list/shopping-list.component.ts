@@ -14,7 +14,7 @@ export class ShoppingListComponent implements OnInit {
   //TODO: Ter a possibilidade de adicionar um item que ja foi comprado no passado
   //TODO: Ver a lista de items ja comprados no passado
 
-  constructor(public shoppingListService: ShoppingListService, private dataBase: AngularFirestore, private msg: ToastrService) { }
+  constructor(public shoppingListService: ShoppingListService, private msg: ToastrService) { }
 
   ngOnInit() {
     this.reset();

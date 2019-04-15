@@ -1,3 +1,17 @@
-<p>
-  to-do works!
-</p>
+<div class="add-item">
+    <form #form="ngForm" autocomplete="off" (submit)="formSubmit(form)">
+      <input type="hidden" name="id" #id="ngModel" [(ngModel)]="toDoService.itemInContext.id">
+        <div class="form-group">
+          <input type="text" class="form-control" name="description" #description="ngModel" [(ngModel)]="toDoService.itemInContext.description" placeholder="O que fazer..." required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-info" [disabled]="!form.valid">{{toDoService.itemInContext.id ? "Salvar" : "Adicionar"}}</button>
+          <button class="btn btn-secondary" style="margin-left:10px" *ngIf="toDoService.itemInContext.id" type="button" (click)="onCancelEdit(form)">Cancelar</button>
+        </div>
+    </form>
+  </div>
+  <div class="shopping-list">
+    <ul>
+      <li *ngFor="let toDoItem of toDoService.allItemsInList " class="list-group-item">{{toDoItem.description}}</li>
+    </ul>
+  </div>
