@@ -1,3 +1,17 @@
-<p>
-  shopping-list works!
-</p>
+<div class="add-item">
+  <form #form="ngForm" autocomplete="off" (submit)="formSubmit(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="shoppingListService.itemInContext.id">
+      <div class="form-group">
+        <input type="text" class="form-control" name="itemDescription" #itemDescription="ngModel" [(ngModel)]="shoppingListService.itemInContext.itemDescription" placeholder="Item" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-info" [disabled]="!form.valid">{{shoppingListService.itemInContext.id ? "Salvar" : "Adicionar"}}</button>
+        <button class="btn btn-secondary" style="margin-left:10px" *ngIf="shoppingListService.itemInContext.id" type="button" (click)="onCancelEdit(form)">Cancelar</button>
+      </div>
+  </form>
+</div>
+<div class="shopping-list">
+  <ul>
+    <li *ngFor="let shoppingListItem of shoppingListService.allItemsInList " class="list-group-item"><app-shopping-list-item [shoppingLinkItem]="shoppingListItem" (delete)="onItemDelete($event)" (edit)="onEditItem($event)" (buy)="onItemBuy($event)"></app-shopping-list-item></li>
+  </ul>
+</div>

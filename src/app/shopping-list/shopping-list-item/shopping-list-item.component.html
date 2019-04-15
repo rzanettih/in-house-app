@@ -1,0 +1,16 @@
+<div class="shopping-list-item-container">
+  <div class="sli-description">{{this.shoppingLinkItem ? this.shoppingLinkItem.itemDescription : "Item nulo"}}</div>
+  <div class="sli-buy">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Preço de compra</div>
+      </div>
+      <input type="number" #buyPrice name="buyPrice" id="buyPrice" class="form form-control" placeholder="0.00">
+    </div>
+  </div>
+  <div class="sli-action">
+    <button class="btn btn-primary btn-edit" (click)="onEdit()"><i class="fas fa-edit"></i></button>
+    <button class="btn btn-danger btn-delete" (click)="onDelete()"><i class="fas fa-trash-alt"></i></button>
+    <button class="btn btn-success btn-buy" (click)="onBuy(buyPrice.value)"><i class="fas fa-shopping-cart"></i></button>
+  </div>
+</div>

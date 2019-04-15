@@ -1,0 +1,56 @@
+.shopping-list-item-container {
+    display: grid;
+    grid-template-rows: auto 10px auto 10px auto;
+    grid-template-columns: auto;
+    grid-template-areas: 
+        "description"
+        "."
+        "buy"
+        "."
+        "action";
+}
+
+.sli-description {
+    grid-area: description;
+    align-self: center;
+}
+
+.sli-buy {
+    grid-area: buy;
+}
+
+.sli-action {
+    grid-area: action;
+    display: grid;
+    grid-template-columns: 50px 5px 50px 5px 50px;
+    grid-template-rows: auto;
+    grid-template-areas: "edit . delete . buy";
+}
+
+.sli-action .btn {
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+    align-content: center;
+}
+
+.sli-action .btn-edit {
+    grid-area: edit;
+}
+
+.sli-action .btn-delete {
+    grid-area: delete;
+}
+
+.sli-action .btn-buy {
+    grid-area: buy;
+}
+
+@media screen and (min-width: 600px) {
+    .shopping-list-item-container {
+        grid-template-columns: auto 10px 230px 10px 160px;
+        grid-template-rows: auto;
+        grid-template-areas: "description . buy . action";
+    }
+
+}
