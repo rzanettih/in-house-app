@@ -1,9 +1,9 @@
 <nav class="menu" id="menu">
   <section class="sectionMenuIco"><i class="fa fa-times-circle" aria-hidden="true" (click)="openMenu('menu');"></i></section>
-  <section><a href="#" routerLink="shopping-list" alt="Lista de compras">Lista de compras</a></section>
-  <section><a href="#" routerLink="car-mileage" alt="Milhagem do carro">Milhagem do carro</a></section>
-  <section><a href="#" routerLink="to-do" alt="Coisas para fazer">Coisas para fazer</a></section>
-  <section><a href="#" routerLink="fixed-costs" alt="Contas fixas">Contas fixas</a></section>
+  <section><a href="#" routerLink="shopping-list" (click)="openMenu('menu')" alt="Lista de compras">Lista de compras</a></section>
+  <section><a href="#" routerLink="car-mileage" (click)="openMenu('menu')" alt="Milhagem do carro">Milhagem do carro</a></section>
+  <section><a href="#" routerLink="to-do" (click)="openMenu('menu')" alt="Coisas para fazer">Coisas para fazer</a></section>
+  <section><a href="#" routerLink="fixed-costs" (click)="openMenu('menu')" alt="Contas fixas">Contas fixas</a></section>
 </nav>
 <article class="top">
   <i class="fa fa fa-bars" aria-hidden="true" (click)="openMenu('menu');"></i>

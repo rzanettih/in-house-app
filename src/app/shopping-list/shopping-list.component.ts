@@ -3,7 +3,6 @@ import { ShoppingListService } from '../shared/shopping-list.service';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from "@angular/fire/firestore";
 import { ToastrService } from 'ngx-toastr';
-import { resetCompiledComponents } from '@angular/core/src/render3/jit/module';
 
 @Component({
   selector: 'app-shopping-list',
@@ -15,7 +14,7 @@ export class ShoppingListComponent implements OnInit {
   //TODO: Ter a possibilidade de adicionar um item que ja foi comprado no passado
   //TODO: Ver a lista de items ja comprados no passado
 
-  constructor(private shoppingListService: ShoppingListService, private dataBase: AngularFirestore, private msg: ToastrService) { }
+  constructor(public shoppingListService: ShoppingListService, private dataBase: AngularFirestore, private msg: ToastrService) { }
 
   ngOnInit() {
     this.reset();
