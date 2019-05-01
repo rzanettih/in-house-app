@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-car-mileage',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarMileageComponent implements OnInit {
 
-  constructor() { }
+  private _cookieTab: string;
+  get cookieTab() : string {
+    if(!this._cookieTab) 
+      this.cookieTab = (!this.cookieService.get('cookieTab') || this.cookieService.get('cookieTab') == "") ? "0" : this.cookieService.get('cookieTab');
+
+    return this._cookieTab;
+  }
+  set cookieTab(cookieTab: string) {
+    this.cookieService.set('cookieTab', cookieTab);
+    this._cookieTab = cookieTab;
+  }
+
+  constructor(private cookieService: CookieService) { }
 
   ngOnInit() {
+    
+    
   }
+
+  
 
 }

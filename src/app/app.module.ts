@@ -17,6 +17,16 @@ import { ShoppingListService } from './shared/shopping-list.service';
 import { FormsModule } from "@angular/forms";
 import { ShoppingListItemComponent } from './shopping-list/shopping-list-item/shopping-list-item.component';
 
+import { CookieService } from 'ngx-cookie-service';
+
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,10 +44,18 @@ import { ShoppingListItemComponent } from './shopping-list/shopping-list-item/sh
     AngularFirestoreModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NoopAnimationsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatTabsModule,
+    MatInputModule
   ],
   providers: [
-    ShoppingListService
+    ShoppingListService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

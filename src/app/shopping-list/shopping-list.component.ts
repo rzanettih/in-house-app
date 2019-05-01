@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css']
-})
+}) 
 export class ShoppingListComponent implements OnInit {
 
   //TODO: Ter a possibilidade de adicionar um item que ja foi comprado no passado
